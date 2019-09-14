@@ -8,7 +8,14 @@ secretNumber = random.randint(1, 20)
 
 for guessesTaken in range(1, 7):
     print("Take a guess.")
-    playerGuess = int(input())
+    while True:
+        try:
+            playerGuess = int(input())
+        except ValueError:
+            print('Please enter a number.')
+            continue
+        else:
+            break
     if playerGuess > secretNumber:
         print('That number is too high.')
     elif playerGuess < secretNumber:

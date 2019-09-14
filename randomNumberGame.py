@@ -24,7 +24,7 @@ for guessesTaken in range(1, 7):
     elif guess < secretNumber:
         print('That number is too low.')
     else:
-        print('You are correct!')
+        print('You are correct!', end=' ')
 
 print('The number I was thinking of was ' + str(secretNumber) + '.')
             

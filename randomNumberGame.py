@@ -19,17 +19,12 @@ secretNumber = random.randint(1, 20)
 for guessesTaken in range(1, 7):
     print("Take a guess.")
     guess = playerGuess()
-    if guessesTaken == 6:
-        break
-    elif guess > secretNumber:
+    if guess > secretNumber:
         print('That number is too high.')
     elif guess < secretNumber:
         print('That number is too low.')
     else:
-        break
+        print('You are correct!')
 
-if playerGuess == secretNumber:
-    print('You are correct! ' + str(secretNumber) + ' is what I was thinking.')
-else:
-    print('Nope. The number I was thinking of was ' + str(secretNumber) + '.')
+print('The number I was thinking of was ' + str(secretNumber) + '.')
             

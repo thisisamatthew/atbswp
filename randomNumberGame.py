@@ -1,5 +1,16 @@
 import random
 
+def playerGuess():
+    while True:
+        try:
+            guess = int(input())
+        except ValueError:
+            print('Please enter a number.')
+            continue
+        else:
+            return guess
+            break
+
 print("Hello. What's your name?")
 playerName = input()
 
@@ -8,17 +19,10 @@ secretNumber = random.randint(1, 20)
 
 for guessesTaken in range(1, 7):
     print("Take a guess.")
-    while True:
-        try:
-            playerGuess = int(input())
-        except ValueError:
-            print('Please enter a number.')
-            continue
-        else:
-            break
-    if playerGuess > secretNumber:
+    guess = playerGuess()
+    if guess > secretNumber:
         print('That number is too high.')
-    elif playerGuess < secretNumber:
+    elif guess < secretNumber:
         print('That number is too low.')
     else:
         break

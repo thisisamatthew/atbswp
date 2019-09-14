@@ -9,7 +9,6 @@ def playerGuess():
             continue
         else:
             return guess
-            break
 
 print("Hello. What's your name?")
 playerName = input()
@@ -20,7 +19,9 @@ secretNumber = random.randint(1, 20)
 for guessesTaken in range(1, 7):
     print("Take a guess.")
     guess = playerGuess()
-    if guess > secretNumber:
+    if guessesTaken == 6:
+        break
+    elif guess > secretNumber:
         print('That number is too high.')
     elif guess < secretNumber:
         print('That number is too low.')

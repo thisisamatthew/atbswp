@@ -15,8 +15,8 @@
 # and then <keyword> or list are at [1], which is a total of
 # two arguments
 
-import shelve, pyperclip, sys
-wait = input("PRESS ENTER TO CONTINUE.")
+import shelve, pyperclip, sys, time
+time.sleep(5)
 mcbShelf = shelve.open('mcb')
 
 if len(sys.argv) == 3 and sys.argv[1].lower() == 'save':

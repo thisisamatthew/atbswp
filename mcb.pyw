@@ -32,7 +32,7 @@ elif len(sys.argv) == 2:
                 totalString = totalString + tempValueStr
             else:
                 totalString = totalString + tempValueStr
-        pyperclip.copy(totalString)
+            pyperclip.copy(totalString)
     elif sys.argv[1] in mcbShelf:
         pyperclip.copy(mcbShelf[sys.argv[1]])
 

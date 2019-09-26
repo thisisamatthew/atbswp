@@ -25,14 +25,17 @@ if len(sys.argv) == 3 and sys.argv[1].lower() == 'delete':
 elif len(sys.argv) == 2:
     if sys.argv[1].lower() == 'list':
         mcbShelfValueList = list(mcbShelf.values())
-        for i in range(len(mcbShelfValueList)):
-            tempValueStr = f"{mcbShelfValueList[i]}\n"
-            if i == 0:
-                totalString = ''
-                totalString = totalString + tempValueStr
-            else:
-                totalString = totalString + tempValueStr
-            pyperclip.copy(totalString)
+        if mcbShelfValueList == None:
+            sys.exit()
+        else:
+            for i in range(len(mcbShelfValueList)):
+                tempValueStr = f"{mcbShelfValueList[i]}\n"
+                if i == 0:
+                    totalString = ''
+                    totalString = totalString + tempValueStr
+                else:
+                    totalString = totalString + tempValueStr
+                pyperclip.copy(totalString)
     elif sys.argv[1] in mcbShelf:
         pyperclip.copy(mcbShelf[sys.argv[1]])
 

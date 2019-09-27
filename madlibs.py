@@ -1,22 +1,32 @@
 import os, re
 
-madLibsFile = open('C:\\Users\\mcolwell\\Documents\\Personal\\Github\\atbswp\\madlibsmaster.txt')
+madLibsFile = open('C:\\Users\\silenus\\Documents\\Github\\atbswp\\madlibsmaster.txt')
 content = madLibsFile.read() # the file is now a string
-wordList = content.split()
-
+# wordList = content.split()
+wordListRx = re.findall(r'(\w+)(\s|[?.!](\s?))', content)
+builderList = []
 # this messes up the list value if it has punctuation in it.
 # I need to figure out how to separate the punctuation in the split
-for i in range(len(wordList)):
-    rules = ['ADJECTIVE' in wordList[i],
-             'NOUN' in wordList[i],
-             'VERB' in wordList[i],
-             'ADVERB' in wordList[i]]
+for i in range(len(wordListRx)):
+        rules = ['ADJECTIVE' in wordListRx[i],
+                 'NOUN' in wordListRx[i],
+                 'VERB' in wordListRx[i],
+                 'ADVERB' in wordListRx[i]]
     
-    if any(rules):
-        print(f"Enter an {wordList[i].lower()}.")
-        userResponse = input()
-        wordList[i] = userResponse
+        if any(rules):
+            partOfSpeechTupleToList = [''.join(i) for i in wordListRx[i]]
+            userResponse = input(f"Enter an {partOfSpeechTupleToList[0].lower()}: ")
+            tupleToList = [''.join(i) for i in wordListRx[i]]
+            builderList += userResponse
+            builderList += tupleToList[1]
+        else:
+            builderList += [''.join(i) for i in wordListRx[i]]
 
-finalSentence = ' '.join(wordList)
-print(finalSentence)
+
+
+
+# tupleToList = [''.join(i) for i in finalString]
+
+finalString = ''.join(builderList)
+print(finalString)
 

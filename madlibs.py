@@ -19,7 +19,7 @@ for i in range(len(wordListRx)):
         tupleToList = [''.join(i) for i in wordListRx[i]]
         builderList.extend([userResponse, tupleToList[1]])
     else:
-        builderList += [''.join(i) for i  in wordListRx[i]]
+        builderList += [''.join(i) for i in wordListRx[i]]
 
 finalString = ''.join(builderList)
 print(finalString)

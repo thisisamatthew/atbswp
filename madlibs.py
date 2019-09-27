@@ -17,8 +17,7 @@ for i in range(len(wordListRx)):
         partOfSpeechTupleToList = [''.join(i) for i in wordListRx[i]]
         userResponse = input(f"Enter an {partOfSpeechTupleToList[0].lower()}: ")
         tupleToList = [''.join(i) for i in wordListRx[i]]
-        builderList += userResponse
-        builderList += tupleToList[1]
+        builderList.extend([userResponse, tupleToList[1]])
     else:
         builderList += [''.join(i) for i in wordListRx[i]]
 

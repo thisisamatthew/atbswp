@@ -1,6 +1,6 @@
 import os, re
 
-filePath = input("Please provide a file path: ")
+filePath = input("Please provide a file path to a text file: ")
 madLibsFile = open(filePath)
 content = madLibsFile.read()
 
@@ -19,7 +19,7 @@ for i in range(len(wordListRx)):
         tupleToList = [''.join(i) for i in wordListRx[i]]
         builderList.extend([userResponse, tupleToList[1]])
     else:
-        builderList += [''.join(i) for i in wordListRx[i]]
+        builderList += [''.join(i) for i  in wordListRx[i]]
 
 finalString = ''.join(builderList)
 print(finalString)

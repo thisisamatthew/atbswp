@@ -1,4 +1,4 @@
-import os, re
+import re
 
 filePath = input("Please provide a file path to a text file: ")
 madLibsFile = open(filePath)
